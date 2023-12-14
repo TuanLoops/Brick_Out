@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GAME ĐẬP GẠCH</title>
+    <style>
+        canvas {
+            border: 4px solid black;
+            border-radius: 10px;
+        }
+
+        #userScore {
+            position: absolute;
+            top: 50%;
+            left: 49%;
+            user-select: none;
+            color: darkgray;
+            font-size: xxx-large;
+            font-family: "Arial Black";
+        }
+
+        #historyGame {
+            position: absolute;
+            left: 3%;
+            z-index: 0;
+        }
+
+
+        #buttonRESET {
+            position: absolute;
+            top: 5%;
+            left: 80%;
+            font-size: xxx-large;
+            font-family: "consolas", monospace;
+            z-index: 0;
+            border: 4px solid;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        #buttonSTART {
+            border: 4px solid;
+            border-radius: 15px;
+            cursor: pointer;
+            font-family: "consolas", monospace;
+        }
+
+        #notiGAMEOVER {
+            position: absolute;
+            top: 60%;
+            left: 39%;
+            user-select: none;
+            color: darkgray;
+            font-size: xx-large;
+            font-family: "Bookman Old Style";
+        }
+
+        #popupInputName {
+            position: absolute;
+            top: 30%;
+            left: 37%;
+            z-index: 2;
+            background-color: antiquewhite;
+            border-radius: 10px;
+            border: 2px dashed #b1154a;
+        }
+
+        #background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 60%;
+        }
+
+        #namePlayer{
+            border-radius: 15px;
+            font-family: "Permanent Marker", cursive;
+        }
+
+    </style>
+</head>
+<body>
+<div id="popupInputName" style="text-align: center;">
+    <h1 style="font-size: xx-large">HỨNG BÓNG PHÁ GẠCH</h1>
+    <input id="namePlayer" type="text" placeholder="Input Name Player" style="width: 210px; font-size: x-large"> <br>
+    <br>
+    <button id="buttonSTART" style="font-size: xx-large" onclick="buttonSTART()">START</button>
+</div>
+
+<div>
+    <img id="background" src="white.jpg" alt="white.jpg"/>
+</div>
+
+<button id="buttonRESET" onclick="buttonRESET()">RESET</button>
+
+<div id="historyGame">
+    <center>
+        <h1>HISTORY GAME</h1>
+        <table border="1">
+            <tr>
+                <th style="width: 50px">No.</th>
+                <th style="width: 150px">Name player</th>
+                <th style="width: 70px">Point</th>
+                <th style="width: 70px">Win/Lose</th>
+            </tr>
+            <tbody id="historyGameInTable">
+
+            </tbody>
+        </table>
+    </center>
+</div>
+<div id="userScore"></div>
+<div id="notiGAMEOVER"></div>
+<center>
+    <canvas id="game" width="600" height="700"></canvas>
+</center>
+<script src="game.js"></script>
+</body>
+
+</html>
